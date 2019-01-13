@@ -44,8 +44,8 @@ namespace WebGameManager
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<ICompanyRepository, CompanyRepositoryInMemory>();
-            services.AddScoped<IGameRepository, GameRepositoryInMemory>();
+            services.AddScoped<ICompanyRepository, CompanyRepositoryFS>();
+            services.AddScoped<IGameRepository, GameRepositoryFS>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
