@@ -1,0 +1,48 @@
+﻿@model VideoGameLibrary.Games
+
+<div>
+    <h4>Games</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GameId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GameId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GameName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GameName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Publisher)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Publisher)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PublisherId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PublisherId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CompanyId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CompanyId)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) |
+    <a asp-action="Index">Back to List</a>
+</div>

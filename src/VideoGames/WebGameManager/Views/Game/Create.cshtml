@@ -1,0 +1,14 @@
+﻿@model VideoGameLibrary.Games
+
+<h4>Games</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @Html.Partial("_EditGame",Model,ViewData)
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
