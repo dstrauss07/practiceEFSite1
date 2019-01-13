@@ -39,12 +39,15 @@ namespace WebGameManager
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<GamesContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<ICompanyRepository, CompanyRepositoryFS>();
+            services.AddScoped<ICompanyRepository, CompanyRepositoryEF>();
             services.AddScoped<IGameRepository, GameRepositoryFS>();
         }
 
