@@ -22,19 +22,26 @@ namespace VideoGameLibrary
 
         public void DeleteCompany(int id)
         {
-            throw new NotImplementedException();
+            _companyContext.Remove(GetByID(id));
+            _companyContext.SaveChanges();
         }
 
         public void EditCompany(Company EditedCompany)
         {
-            throw new NotImplementedException();
+            var OrigCompany = GetByID(EditedCompany.CompanyId);
+            OrigCompany.CompanyName = EditedCompany.CompanyName;
+            OrigCompany.Location = EditedCompany.Location;
+            _companyContext.SaveChanges();
         }
 
         public Company GetByID(int id)
         {
-            throw new NotImplementedException();
-            //return _companyContext.Games.Where(b => b.CompanyId == id);
-        }
+            //throw new NotImplementedException();
+            return _companyContext.Company
+                .Single(b => b.CompanyId == id);
+
+
+      }
 
         public List<Company> ListAll()
         {
