@@ -61,6 +61,7 @@ namespace VideoGameLibrary
 
         public void AddGame(Games NewGame)
         {
+            NewGame.GameId = _nextId++;
             _games.Add(NewGame);
             SaveFile();
         }

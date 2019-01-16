@@ -48,7 +48,7 @@ namespace WebGameManager
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<ICompanyRepository, CompanyRepositoryEF>();
-            services.AddScoped<IGameRepository, GameRepositoryFS>();
+            services.AddScoped<IGameRepository, GameRepositoryEF>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
